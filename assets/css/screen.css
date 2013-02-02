@@ -1,0 +1,541 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, .big-button, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+.clearfix, .container, header[role="banner"] hgroup, .l-features header, .l-features section {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.max-width, .hero img, .l-features article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ::Base styles Almost exclusively single element selectors */
+/* ------------------------------------------------------------ */
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #525a56;
+  font-family: "Avenir LT W01 55 Roman", Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #c64f24;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+  text-decoration: none;
+}
+a:hover, a:focus, a:active {
+  color: #2b495b;
+}
+
+.big-button {
+  margin-bottom: 1em;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  background: #c64f24;
+  display: block;
+  text-align: center;
+  color: #fff;
+  padding: 0.92em 1.4em;
+  margin-right: 2em;
+  letter-spacing: 0.0625em;
+}
+.big-button:hover, .big-button:focus, .big-button:active {
+  background: #2b495b;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.25em;
+  line-height: 1.11111em;
+  margin: 0 0 0.66667em 0;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.25em;
+  margin: 1em 0 0.5em 0;
+}
+
+h3 {
+  font-size: 1.5625em;
+  line-height: 1.28em;
+  margin: 1.28em 0 0.64em 0;
+}
+
+h4 {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin: 0 0 0.57143em 0;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+ol, ul {
+  font-size: 0.9375em;
+  line-height: 1.6em;
+  margin: 0 0 2em 0;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+strong, .big-button, b {
+  font-family: 'Avenir LT W02 95 Black';
+}
+
+em, i, q {
+  font-style: italic;
+  font-family: 'AvenirLTW01-55Oblique';
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Avenir LT W02 95 Black';
+  letter-spacing: -0.0125em;
+  color: #2e3230;
+}
+
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+}
+
+/* ::Layout styles - Layouts hold one or more modules together. */
+/* ------------------------------------------------------------ */
+.container, header[role="banner"] hgroup, .l-features header {
+  margin: 0 auto;
+  width: 95%;
+}
+
+header[role="banner"] {
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  background: #2e3230;
+  text-align: center;
+}
+header[role="banner"] h1 {
+  color: #fff;
+  font-size: 3em;
+  line-height: 1.16667em;
+  margin-bottom: 0;
+}
+header[role="banner"] h3 {
+  font-family: "Avenir LT W01 55 Roman", Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+header[role="banner"] a {
+  color: #e28260;
+}
+header[role="banner"] a:hover, header[role="banner"] a:focus, header[role="banner"] a:active {
+  color: #a8d9f4;
+}
+header[role="banner"] a + a {
+  color: #a8d9f4;
+}
+header[role="banner"] a + a:hover, header[role="banner"] a + a:focus, header[role="banner"] a + a:active {
+  color: #e28260;
+}
+
+footer.global {
+  background: #2e3230;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  color: #ddd;
+}
+footer.global h2, footer.global h4 {
+  color: #fff;
+}
+footer.global a {
+  color: #e28260;
+}
+footer.global a:hover, footer.global a:focus, footer.global a:active {
+  color: #a8d9f4;
+}
+footer.global .suplimentary p {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin: 0 0 1.14286em 0;
+}
+footer.global .legal-smeegal {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  color: #aaa;
+}
+footer.global div {
+  margin-bottom: 4.5em;
+}
+
+.sign-off {
+  margin-bottom: 4em;
+}
+
+.hero {
+  padding-top: 4em;
+  margin-bottom: 3.5em;
+  background: #a8d9f4;
+  position: relative;
+}
+.hero img {
+  display: block;
+  margin: 0 auto;
+}
+
+.highlight {
+  margin-bottom: 1em;
+}
+.highlight article {
+  text-align: center;
+  margin-bottom: 3.5em;
+}
+.highlight p {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  margin: 0 auto 1em auto;
+  width: 90%;
+}
+.highlight img {
+  margin: 0 auto;
+  margin-bottom: 1em;
+  max-width: 98%;
+  display: block;
+  position: relative;
+}
+
+.l-features header {
+  margin-bottom: 2em;
+}
+.l-features header.type {
+  text-align: center;
+}
+.l-features article {
+  margin-bottom: 4em;
+}
+.l-features article img {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  border: 10px solid #eeeeee;
+}
+.l-features aside {
+  position: relative;
+  z-index: 1;
+}
+.l-features aside h3 {
+  margin: 0 auto 1.92em auto;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+.l-features aside span {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background: #fff;
+  position: relative;
+  z-index: 4;
+  display: inline-block;
+}
+.l-features aside b {
+  height: 3px;
+  width: 100%;
+  display: block;
+  border-bottom: 3px solid #eeeeee;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 47%;
+}
+
+.setup {
+  clear: both;
+  background: url(../img/logos.png) transparent no-repeat 118% 0%;
+  padding-top: 6em;
+  margin-bottom: 9em;
+}
+.setup header {
+  margin-top: 3em;
+}
+
+/* ::Media queries */
+/* ------------------------------------------------------------ */
+@media screen and (min-width: 30em) {
+  .container, header[role="banner"] hgroup, .l-features header {
+    width: 95%;
+  }
+}
+@media screen and (min-width: 42.5em) {
+  .container, header[role="banner"] hgroup, .l-features header {
+    min-width: 660px;
+  }
+
+  header[role="banner"] {
+    text-align: left;
+  }
+  header[role="banner"] h1, header[role="banner"] h3 {
+    display: inline-block;
+  }
+  header[role="banner"] h1 {
+    float: left;
+  }
+  header[role="banner"] h3 {
+    float: right;
+    margin: 0.64em 0 0 0;
+    width: 10em;
+  }
+
+  .suplimentary {
+    float: left;
+    display: inline;
+    width: 35%;
+    margin-right: 10%;
+  }
+  .suplimentary + div {
+    width: 30%;
+    margin-right: 10%;
+  }
+  .suplimentary + div + div {
+    width: 15%;
+    margin-right: 0;
+  }
+
+  .hero {
+    padding-top: 13em;
+    padding-bottom: 12em;
+  }
+  .hero img {
+    left: 50%;
+    margin-left: -277px;
+    position: absolute;
+    top: -5.25em;
+  }
+
+  .highlight p {
+    width: 80%;
+  }
+
+  .l-features article {
+    display: inline-block;
+    width: 48%;
+    margin-right: 4%;
+    text-align: left;
+    float: left;
+  }
+  .l-features article:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .l-features article:nth-of-type(3n) {
+    clear: left;
+  }
+  .l-features article p {
+    width: 95%;
+  }
+  .l-features article img {
+    border: 1px solid #eeeeee;
+  }
+
+  .setup {
+    background-position: 87% 0%;
+  }
+
+  .big-button {
+    display: inline-block;
+  }
+
+  footer.global .container, footer.global header[role="banner"] hgroup, header[role="banner"] footer.global hgroup, footer.global .l-features header, .l-features footer.global header {
+    background: url(../img/ligs.png) transparent no-repeat bottom right;
+  }
+
+  .legal-smeegal {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 50em) {
+  .container, header[role="banner"] hgroup, .l-features header {
+    min-width: 780px;
+  }
+
+  .highlight {
+    margin-bottom: 2em;
+  }
+  .highlight p {
+    width: 65%;
+  }
+
+  .l-features header {
+    text-align: left;
+  }
+  .l-features header p {
+    padding-right: 2%;
+  }
+  .l-features header.type {
+    text-align: left;
+    margin-bottom: 4.5em;
+    background: url(../img/double-a.png) transparent no-repeat 5% 50%;
+  }
+  .l-features header.type h2, .l-features header.type p {
+    padding-left: 30%;
+  }
+  .l-features section {
+    padding-left: 30%;
+  }
+
+  .sign-off {
+    margin-bottom: 6em;
+  }
+  .sign-off h2, .sign-off p {
+    padding-left: 30%;
+    padding-right: 2%;
+  }
+
+  footer.global {
+    padding-top: 4em;
+    padding-bottom: 2em;
+  }
+}
+@media screen and (min-width: 77.5em) {
+  .container, header[role="banner"] hgroup, .l-features header {
+    max-width: 1180px;
+  }
+
+  .hero {
+    margin-bottom: 5em;
+  }
+
+  .highlight {
+    margin-bottom: 3.5em;
+  }
+  .highlight article {
+    margin-bottom: 5em;
+  }
+  .highlight p {
+    width: 38%;
+  }
+  .highlight img {
+    max-width: 100%;
+    margin-top: 11px;
+    /* Nudge back to baseline */
+  }
+
+  .l-features header {
+    text-align: left;
+  }
+  .l-features header.type {
+    background-position: 10% 50%;
+  }
+  .l-features header.type h2, .l-features header.type p {
+    padding-left: 35%;
+  }
+  .l-features section {
+    padding-left: 35%;
+  }
+  .l-features article {
+    width: 46%;
+    margin-right: 8%;
+  }
+  .l-features article p {
+    width: 100%;
+  }
+
+  .sign-off h2, .sign-off p {
+    padding-left: 35%;
+  }
+}
+@media print {
+  body {
+    font-size: 62.5%;
+    line-height: 1em;
+  }
+}
+@media screen and (max-width: 769px) {
+  -webkit-text-size-adjust: none;
+}
+/* ::State styles */
+/* ------------------------------------------------------------ */
+.is-hidden {
+  display: none;
+}
+
+.is-shown, .is-block {
+  display: block;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+/* ::Debugs and #grid by Jon Gibbins */
+/* ----------------------------------------------------------- */
+#grid {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#grid div.horiz {
+  height: 7px;
+  border-bottom: 1px solid #dddddd;
+  margin: 0;
+  padding: 0;
+}

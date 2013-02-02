@@ -1,0 +1,58 @@
+@import "settings";
+@import "mixins";
+
+
+// Default Sizing and spacing
+// ------------------------------------------------------------
+
+// You'll often get better results here if you work in numbers the divide into the baseline.
+// IE, if you have a baseline of 6px, multiples or divisions of often provide best results in ems 
+
+h1 { 
+	@include adjust-font-size-to(36px); 
+	margin: 0 0 rhythm(3, 36px) 0;  						// 2 lines below, based on font size
+} 
+			
+h2 { 
+	@include adjust-font-size-to(32px); 
+	margin: rhythm(4, 32px) 0 rhythm(2, 32px) 0;  			// 4 lines above / 2 lines below, based on font size 
+}
+
+h3 { 
+	@include adjust-font-size-to(25px); 
+	margin: rhythm(4, 25px) 0 rhythm(2, 25px) 0;  			// 4 lines above / 2 lines below, based on font size 
+} 
+
+h4 { 
+	@include adjust-font-size-to(14px); 
+	margin: 0 0 rhythm(1, 14px) 0;  						// 3 lines below, based on font size 
+} 	
+
+p { 
+	@include adjust-font-size-to(16px); 
+	margin: 0 0 rhythm(2, 16px) 0;							// 2 lines below, based on font size
+}
+
+ol, ul {
+	@include adjust-font-size-to(15px);
+	margin: 0 0 rhythm(4, 16px) 0;							// 4 lines below, based on font size
+}
+
+
+// Core typography
+// ------------------------------------------------------------
+
+ul,ol 		{ @include nobullet; } 							// Include unordered list from mixins by default
+strong, b 	{ font-family: 'Avenir LT W02 95 Black'; }
+em, i, q 	{ font-style: italic; font-family:'AvenirLTW01-55Oblique'; }
+
+h1, h2, h3, h4 {
+	font-family: 'Avenir LT W02 95 Black';
+	letter-spacing: em-font(-0.20px);
+	color: $heading-color;
+}
+
+h4 {
+	text-transform: uppercase;
+	letter-spacing: em-font(2px);
+}

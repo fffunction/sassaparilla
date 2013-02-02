@@ -1,0 +1,504 @@
+// Table of Contents
+
+// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
+// -------------------------------------------------------------
+
+// ::Imports pre-render
+	//:: Reset
+	//:: Settings
+	//:: Mixins
+// ::Clearfix extends
+// ::Base styles
+
+// ::Layout styles 
+// ::Media queries 
+// ::State styles
+// ::Debugs  
+
+
+
+// ::Imports pre-render. Must be after reset 
+// ------------------------------------------------------------
+@import "compass/typography/vertical_rhythm";
+@import "libs/reset";
+@import "libs/settings";
+@import "libs/mixins";
+
+
+
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+// CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
+
+// Use clearfix if you need general clearfixing
+.clearfix 			{ @include clearfix; }
+
+
+// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
+// .pie-clearfix 		{ @include pie-clearfix; }
+
+
+
+// OTHER EXTENDS
+
+// Max width, for images etc... in RWD
+.max-width 			{ max-width: 100%; height: auto; }
+
+
+
+/* ::Base styles Almost exclusively single element selectors */
+/* ------------------------------------------------------------ */
+
+html {
+	font-size: 100%;
+}
+
+body { 
+	color: $base-color;
+	font-family: 'Avenir LT W01 55 Roman', Helvetica, Arial, sans-serif;
+	font-synthesis: none; 
+	text-rendering: optimizeLegibility; 
+}
+
+a {
+	color: $action;
+	@include force-wrap;
+	text-decoration: none;
+	&:hover, &:focus, &:active {
+		color: $action-respond;
+	}
+}
+
+.big-button {
+	@include trailer(2);
+	@extend strong;
+	@include adjust-font-size-to(18px); 
+	background: $action;
+	display: block;
+	text-align: center;
+	color: #fff;
+	padding: 0.92em 1.4em;
+	margin-right: 2em;
+	letter-spacing: em-font(1px);
+	&:hover, &:focus, &:active {
+		background: $action-respond;
+		color: #fff;
+	}
+}
+
+// Import base typography into the cascade (if required)
+@import "libs/typography"; 		
+
+
+
+/* ::Layout styles - Layouts hold one or more modules together. */
+/* ------------------------------------------------------------ */
+
+.container {
+	@extend .clearfix;
+	margin: 0 auto;
+	width: 95%;
+}
+
+header[role="banner"] {
+	@include padding-leader(5);
+	@include padding-trailer(5);
+	background: $primary;
+	text-align: center;
+	h1 { 
+		color: #fff; 
+		@include adjust-font-size-to(48px);
+		margin-bottom: 0;
+	}
+	h3 {
+		font-family: 'Avenir LT W01 55 Roman', Helvetica, Arial, sans-serif;
+		color: #fff;
+	}
+	hgroup {
+		@extend .container;
+	}
+	a {
+		color: $red-light;
+		&:hover, &:focus, &:active {
+			color: $blue;
+		}
+		+ a {
+			color: $blue;
+			&:hover, &:focus, &:active {
+				color: $red-light;
+			}
+		}
+	}
+}
+
+footer.global {
+	background: $primary;
+	@include padding-leader(4);
+	@include padding-trailer(2);
+	color: #ddd;
+	h2, h4 {
+		color: #fff;
+	}
+	a {
+		color: $red-light;
+		&:hover, &:focus, &:active {
+			color: $blue;
+		}
+	}
+	.suplimentary {
+		p {
+			@include adjust-font-size-to(14px); 
+			margin: 0 0 rhythm(2, 14px) 0;  
+		}
+	}
+	.legal-smeegal {
+		@include adjust-font-size-to(14px);  
+		color: #aaa;
+	}
+	div{
+		@include trailer(9);
+	}
+}
+
+.sign-off {
+	@include trailer(8);
+}
+
+.hero {
+	@include padding-leader(8);
+	@include trailer(7);
+	background: $blue;
+	position: relative;
+	img {
+		@extend .max-width;
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.highlight {
+	@include trailer(2);
+	article {
+		text-align: center;
+		@include trailer(7);
+	}
+	p {
+		@include adjust-font-size-to(18px); 
+		margin: 0 auto rhythm(2, 16px) auto;	
+		width: 90%;
+	}
+	img {
+		margin: 0 auto;
+		@include trailer(2);
+		max-width: 98%;
+		display: block;
+		position: relative;
+	}
+}
+
+.l-features {
+	section {
+		@extend .clearfix;
+	}
+	header {
+		@include trailer(4);
+		@extend .container;
+		&.type {
+			text-align: center;
+		}
+	}
+	article {
+		@include trailer(8);
+		img {
+			@extend .max-width;
+			@include box-sizing(border-box);
+			display: block;
+			border: 10px solid #eee;
+		}
+	}
+	aside {
+		position: relative;
+		z-index: 1;
+		h3 {
+			margin: 0 auto rhythm(6, 25px) auto; 
+			text-align: center;
+			position: relative;
+			z-index: 3;
+		}
+		span {
+			@include padding-trailer(2);
+			@include padding-leader(2);
+			padding-left: 1em;
+			padding-right: 1em;
+			background: #fff;
+			position: relative;
+			z-index: 4;
+			display: inline-block;
+		}
+		b {
+			height: 3px;
+			width: 100%;
+			display: block;
+			border-bottom: 3px solid #eee;
+			position: absolute;
+			z-index: 2;
+			left: 0;
+			bottom: 47%;
+		}
+	}
+}
+
+.setup {
+	clear: both;
+	background: url(../img/logos.png) transparent no-repeat 118% 0%;
+	@include padding-leader(12);
+	@include trailer(18);
+	header {
+		@include leader(6);
+	}
+}
+
+/* ::Media queries */
+/* ------------------------------------------------------------ */
+
+
+@media screen and (min-width: em-font(480px)) {
+	.container {
+		width: 95%;
+	}
+}
+
+
+@media screen and (min-width: em-font(680px)) {
+	.container {
+		min-width: 660px;
+	}
+	header[role="banner"] {
+		text-align: left;
+		h1, h3 {
+			display: inline-block;
+		}
+		h1 {
+			float: left;
+		}
+		h3 {
+			float: right;
+			margin: rhythm(2, 25px) 0 0 0; 
+			width: 10em;
+		}
+	}
+	.suplimentary {
+		float: left;
+		display: inline;
+		width: 35%;
+		margin-right: 10%;
+		+ div {
+			width: 30%;	
+			margin-right: 10%;
+		}
+		+ div + div {
+			width: 15%;
+			margin-right: 0;
+		}
+	}
+	.hero {
+		@include padding-leader(26);
+		@include padding-trailer(24);
+		img {
+			left: 50%;
+			margin-left: -277px;
+			position: absolute;
+			top: em-base(-42px);
+		}
+	}
+	.highlight {
+		p {
+			width: 80%;
+		}
+	}
+	.l-features {
+		article {
+			display: inline-block;
+			width: 48%;
+			margin-right: 4%;
+			text-align: left;
+			float: left;
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+			&:nth-of-type(3n) {
+				clear: left;
+			}
+			p {
+				width: 95%;
+			}
+			img {
+				border: 1px solid #eee;
+			}
+		}
+	}
+	.setup {
+		background-position: 87% 0%;
+	}
+	.big-button {
+		display: inline-block;
+	}
+	footer.global {
+		.container {
+			background: url(../img/ligs.png) transparent no-repeat bottom right;
+		}
+	}
+	.legal-smeegal {
+		width: 80%;
+	}
+}
+
+
+@media screen and (min-width: em-font(800px)) {
+	.container {
+		min-width: 780px;
+	}
+	.highlight {
+		@include trailer(4);
+		p {
+			width: 65%;
+		}
+	}
+	.l-features {
+		header {
+			text-align: left;
+			p {
+				padding-right: 2%;
+			}
+			&.type {
+				text-align: left;
+				@include trailer(9);
+				background: url(../img/double-a.png) transparent no-repeat 5% 50%;
+				h2, p {
+					padding-left: 30%;
+				}
+			}
+		}
+		section {
+			padding-left: 30%;
+		}
+	}
+	.sign-off {
+		@include trailer(12);
+		h2, p {
+			padding-left: 30%;
+			padding-right: 2%;
+		}
+	}
+	footer.global {
+		@include padding-leader(8);
+		@include padding-trailer(4);
+	}
+}
+
+
+@media screen and (min-width: em-font(1240px)) {
+	.container {
+		max-width: 1180px;
+	}
+	.hero {
+		@include trailer(10);
+	}
+	.highlight {
+		@include trailer(7);
+		article {
+			@include trailer(10);
+		}
+		p {
+			width: 38%;
+		}
+		img {
+			max-width: 100%;
+			margin-top: 11px; /* Nudge back to baseline */
+		}
+	}
+	.l-features {
+		header {
+			text-align: left;
+			&.type {
+				background-position: 10% 50%;
+				h2, p {
+					padding-left: 35%;
+				}
+			}
+		}
+		section {
+			padding-left: 35%;
+		}
+		article {
+			width: 46%;
+			margin-right: 8%;
+			p {
+				width: 100%;
+			}
+		}
+	}
+	.sign-off {
+		h2, p {
+			padding-left: 35%;
+		}
+	}
+}
+
+
+// Print styles
+@media print {
+	body {
+		// Smaller type for printing. Save a tree
+		font-size: percentage(10 / 16);
+		@include adjust-leading-to(2);
+	}
+}
+
+
+// IOS specifics 
+@media screen and (max-width: 769px) {  // Absolute measure here, as we're talking about devices, not screen size
+	-webkit-text-size-adjust:none; 		// Stop iPhone/iPad from scaling text
+}
+
+
+/* ::State styles */
+/* ------------------------------------------------------------ */
+
+.is-hidden {
+	display: none;
+}
+
+.is-shown, .is-block {
+	display: block;
+}
+
+.is-uppercase {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.is-lowercase {
+	text-transform: lowercase;
+}
+
+
+
+/* ::Debugs and #grid by Jon Gibbins */
+/* ----------------------------------------------------------- */
+
+#grid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#grid div.horiz{
+    height: $base-line-height - 1px;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+}
