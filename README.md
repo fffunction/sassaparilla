@@ -87,7 +87,7 @@ To prevent oddly spaced leading and large gaps between lines, we like to use a s
 #### In typography.scss
 
 ##### Setting your default headings, paragraphs, lists etc… using compass' rhythm and adjust-font-size-to commands. 
-Whenever you adjust the font-size to using the adjust-font-size-to (eg 26px) this becomes your base unit to work out how many lines spacing you need above and below the element. E.g
+Whenever you adjust the font-size to using the adjust-font-size-to (e.g. 26px) this becomes your base unit to work out how many lines spacing you need above and below the element. E.g
 
 - **@include adjust-font-size-to(26px);** - Adjust font size to 26px
 - **margin: 0 0 rhythm(2, 26px) 0;**  - Add two lines of our base-line-height (6x2 = 12px) below the element, base those two lines on our font size, and covert to ems. 
@@ -96,7 +96,7 @@ Have a play. It makes more sense when you do.
 
 ##### So:
 @include adjust-font-size-to(26px); 
-margin: 0 auto rhythm(2, 26px);  	
+margin: 0 auto rhythm(2, 26px);    
 
 ##### Gives us:					
 font-size: 1.625em;
@@ -119,7 +119,7 @@ Say - for example you'd like to add a pixel value to a media query, but you'd li
 - **em-font(#px)** - convert the value to pixels, based on the base-font-size.
 - **em-base(#px)** - convert the value to pixels, based on the base-line-height.
 
-We also tend to like these for fine-tuning elements such as letterspacing. 
+We also tend to like these for fine-tuning elements such as letter spacing. 
 
 
 #### Using with Wordpress
@@ -134,13 +134,13 @@ You can check out the website here (http://hashgrid.com) - for instructions on h
 
 ---
 
-## Sassaparilla high-school football rules
+## Sassaparilla markup guidelines
 
 At fffunction we write our css using the following rules. If you want to follow our lead, then the below should help.
 
 - No ID's for styling
 - Write in all lowercase and separate each word with a dash (.global-header)
 - Use 4space tab indenting. Indent as you go
-- Nest as little as possible to achieve the desired control
+- Nest as little as possible to achieve the desired control - keeps the compiled CSS filesize down
 - Leave comments you wish to compile to css in regular css style. All other comments, write in SCSS style
-- Use @extend and @mixin to keep code nice and dry.
+- Use @extend and @mixin to keep code nice and lean
