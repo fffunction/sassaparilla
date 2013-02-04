@@ -128,7 +128,9 @@ Copy assets and config.rb into your theme folder.
 
 #### Lastly
 
-We've included #grid by Jon Gibbins and set it to generate from our baseline settings. This provides a nice visual check for baseline settings. You can check out the website here (http://hashgrid.com) - for instructions on how its used.
+We've included #grid by Jon Gibbins and set it to generate from our baseline settings. This provides a nice visual check for baseline settings (although we should note each browser handles em maths slightly differently).
+
+You can check out the website here (http://hashgrid.com) - for instructions on how its used.
 
 ---
 
