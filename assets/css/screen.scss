@@ -1,0 +1,196 @@
+// Table of Contents
+
+// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
+// -------------------------------------------------------------
+
+// ::Imports pre-render
+	//:: Reset
+	//:: Settings
+	//:: Mixins
+// ::Clearfix extends
+// ::Base styles
+
+// ::Layout styles 
+// ::Media queries 
+// ::State styles
+// ::Debugs  
+
+
+
+// ::Imports pre-render. Must be after reset 
+// ------------------------------------------------------------
+@import "compass/typography/vertical_rhythm";
+@import "libs/reset";
+@import "libs/settings";
+@import "libs/mixins";
+
+
+
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+// CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
+
+// Use clearfix if you need general clearfixing
+.clearfix 			{ @include clearfix; }
+
+
+// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
+.pie-clearfix 		{ @include pie-clearfix; }
+
+
+
+// OTHER EXTENDS
+
+// Max width, for images etc... in RWD
+.max-width 			{ max-width: 100%; height: auto; }
+
+
+
+/* ::Base styles Almost exclusively single element selectors */
+/* ------------------------------------------------------------ */
+
+html {
+	font-size: 100%;
+}
+
+body { 
+	color: $base-color;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: $action;
+	@include force-wrap;					// force text links to wrap
+	&:hover, &:focus, &:active {
+		color: $action-respond
+	}
+}
+
+// Import base typography into the cascade (if required)
+@import "libs/typography"; 		
+
+
+// Import form styles into the cascade (if required)
+@import "libs/forms";			
+
+
+
+// -------------------------------------------------------------------------------------------------------
+
+// All the below can be removed if need be
+
+// -------------------------------------------------------------------------------------------------------
+
+
+
+
+/* ::Layout styles - Layouts hold one or more modules together. */
+/* ------------------------------------------------------------ */
+
+.container {
+	@extend .clearfix;
+	margin: 0 auto;
+	width: 95%;
+}
+
+/* Example styles - you'll most likey want to remove*/
+header {
+	@include padding-leader(4);
+	@include padding-trailer(2);
+	@include trailer(6);
+	background: #333;
+	h1 { color: #fff; }
+}
+
+section 				{ @extend .clearfix; }
+h1 						{ font-weight: 600; }
+ol 						{ @include ordered-inside }
+ul 						{ @include unordered-inside }
+
+
+
+/* ::Media queries */
+/* ------------------------------------------------------------ */
+
+// If using gridset or another pre-defined grid, these should match up to the same breakpoints
+
+// Below examples use a mobile-first approach
+
+
+// Eg for 480px
+@media screen and (min-width: em-font(480px)) {
+	.container {
+		width: 95%;
+	}
+}
+
+
+// Eg for 800px
+@media screen and (min-width: em-font(800px)) {
+	.container {
+		min-width: 780px;
+	}
+}
+
+// Eg for 1240px
+@media screen and (min-width: em-font(1240px)) {
+	.container {
+		max-width: 1080px;
+	}
+}
+
+// Print styles
+@media print {
+	body {
+		// Smaller type for printing. Save a tree
+		font-size: percentage(10 / 16);
+		@include adjust-leading-to(2);
+	}
+}
+
+
+// IOS specifics 
+@media screen and (max-width: 769px) {  // Absolute measure here, as we're talking about devices, not screen size
+	-webkit-text-size-adjust:none; 		// Stop iPhone/iPad from scaling text
+}
+
+
+/* ::State styles */
+/* ------------------------------------------------------------ */
+
+.is-hidden {
+	display: none;
+}
+
+.is-shown, .is-block {
+	display: block;
+}
+
+.is-uppercase {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.is-lowercase {
+	text-transform: lowercase;
+}
+
+
+
+/* ::Debugs and #grid by Jon Gibbins */
+/* ----------------------------------------------------------- */
+
+#grid {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#grid div.horiz{
+    height: $base-line-height - 1px;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+}
