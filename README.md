@@ -18,7 +18,7 @@ Compass is a library of common elements, equations and helper styles that is kep
 
 Both SASS and Compass are Ruby Gems and will need to be installed via command line or terminal (if you're on a mac you're already rocking Ruby baby).
 
-You can compile using a Gooey like Codekit or go hardcore and just use command line. Either way it's pretty easy to get up and running.
+You can compile using a GUI like Codekit or go hardcore and just use command line. Either way it's pretty easy to get up and running.
 
 You'll find documentation on both the SASS and Compass websites on how to install and use these tools. If you plan on installing Compass (and you'll need to), then you shouldn't need to install SASS separately. 
 
