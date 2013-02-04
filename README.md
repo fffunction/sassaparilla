@@ -108,18 +108,18 @@ Have a play. It makes more sense when you do.
 
 If you want to vertically space other elements on the page (sections etc…) you can use the Compass leader and trailer functions.
 
-	@include padding-leader(x); - adds x lines of padding, based on the base-line-height above the element. 
-	@include padding-trailer(x); - adds x lines of padding, based on the base-line-height below the element.
-	@include leader(x); - adds x lines of margin, based on the base-line-height above the element. 
-	@include trailer(x); - adds x lines of margin, based on the base-line-height below the element.
+	@include padding-leader(x); // adds x lines of padding, based on the base-line-height above the element. 
+	@include padding-trailer(x); // adds x lines of padding, based on the base-line-height below the element.
+	@include leader(x); // adds x lines of margin, based on the base-line-height above the element. 
+	@include trailer(x); // adds x lines of margin, based on the base-line-height below the element.
 
 #### One final trick
 
 Say - for example you'd like to add a pixel value to a media query, but you'd like to have that value convert to the relevant em value for the base-line-height or base-font-size. That might mean a few calculations. Sassaparilla includes two functions to help with this.
 
-	em-font(#px) - converts the value to pixels, based on the base-font-size.
+	em-font(#px) // converts the value to pixels, based on the base-font-size.
 	
-	em-base(#px) - converts the value to pixels, based on the base-line-height.
+	em-base(#px) // converts the value to pixels, based on the base-line-height.
 
 We also tend to like these for fine-tuning elements such as letter spacing. 
 
