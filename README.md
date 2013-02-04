@@ -35,18 +35,6 @@ If you have trouble, try using the 'sudo commands' (with care) to access the cor
 ### sudo gem update --system 
 ### sudo gem install compass
 
----
-
-## Sassaparilla high-school football rules
-
-- No ID's for styling
-- Write in all lowercase and separate each word with a dash (.global-header)
-- Use 4space tab indenting. Indent as you go
-- Nest as little as possible to achieve the desired control
-- Make use of parent child for better specificity (E.g div > h3)
-- Leave comments you wish to compile to css in regular css style. All other comments, write in SCSS style
-- Use @extend and @mixin to keep code nice and dry.
-
 --- 
 
 ## CSS set-up
@@ -139,3 +127,16 @@ Copy assets and config.rb into your theme folder.
 #### Lastly
 
 We've included #grid by Jon Gibbins and set it to generate from our baseline settings. This provides a nice visual check for baseline settings. You can check out the website here (http://hashgrid.com) - for instructions on how its used.
+
+---
+
+## Sassaparilla high-school football rules
+
+At fffunction we wire our css using the following rules. If you want to follow our lead, then the below should help.
+
+- No ID's for styling
+- Write in all lowercase and separate each word with a dash (.global-header)
+- Use 4space tab indenting. Indent as you go
+- Nest as little as possible to achieve the desired control
+- Leave comments you wish to compile to css in regular css style. All other comments, write in SCSS style
+- Use @extend and @mixin to keep code nice and dry.
