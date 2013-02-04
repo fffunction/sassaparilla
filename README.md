@@ -88,7 +88,8 @@ To prevent oddly spaced leading and large gaps between lines, we like to use a s
 ##### Setting your default headings, paragraphs, lists etc… using compass' rhythm and adjust-font-size-to commands. 
 Whenever you adjust the font-size to using the adjust-font-size-to (e.g. 26px) this becomes your base unit to work out how many lines spacing you need above and below the element. e.g.
 
-	@include adjust-font-size-to(26px); - Adjusts font size to 26px
+	@include adjust-font-size-to(26px); 
+  Adjusts font size to 26px
 	
 	margin: 0 0 rhythm(2, 26px) 0; - Adds two lines of our base-line-height (6x2 = 12px) below the element, base those two lines on our font size, and covert to ems. 
 
@@ -97,7 +98,7 @@ Have a play. It makes more sense when you do.
 ##### So:
 
 	@include adjust-font-size-to(26px); 
-	margin: 0 auto rhythm(2, 26px);    
+	margin: 0 0 rhythm(2, 26px) 0;    
 
 ##### Gives us:					
 	font-size: 1.625em;
