@@ -4,7 +4,9 @@ A quick start template for (hopefully) better websites.
 
 ## Overview
 
-Sassaparilla is a set of default rules and style that starts everything we do at fffunction in a consistent manner. It's not a boilerplate or a theme.
+Sassaparilla is a set of default rules and style that starts everything we do at fffunction in a consistent manner. 
+
+It's not a boilerplate or a theme.
 
 Sarsaparilla on the other hand, is a nice refreshing root beer. Perhaps crack one open while you're reading this.
 
@@ -132,7 +134,7 @@ We've included #grid by Jon Gibbins and set it to generate from our baseline set
 
 ## Sassaparilla high-school football rules
 
-At fffunction we wire our css using the following rules. If you want to follow our lead, then the below should help.
+At fffunction we write our css using the following rules. If you want to follow our lead, then the below should help.
 
 - No ID's for styling
 - Write in all lowercase and separate each word with a dash (.global-header)
