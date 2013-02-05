@@ -146,3 +146,6 @@ At fffunction we write our css using the following rules. If you want to follow 
 - Nest as little as possible to achieve the desired control - keeps the compiled CSS file size down
 - Leave comments you wish to compile to css in regular css style. All other comments, write in SCSS style
 - Use @extend and @mixin to keep code nice and lean
+
+## The legal bit
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit [The Creative Commons Website](http://creativecommons.org/licenses/by-sa/3.0/).
