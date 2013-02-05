@@ -129,14 +129,14 @@ ul 						{ @include unordered-inside }
 // Eg for 800px
 @media screen and (min-width: em-font(800px)) {
 	.container {
-		min-width: 780px;
+		min-width: em-font(780px);
 	}
 }
 
 // Eg for 1240px
 @media screen and (min-width: em-font(1240px)) {
 	.container {
-		max-width: 1080px;
+		max-width: em-font(1080px);
 	}
 }
 
