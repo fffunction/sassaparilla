@@ -286,12 +286,12 @@ ul {
 }
 @media screen and (min-width: 50em) {
   .container {
-    min-width: 780px;
+    min-width: 48.75em;
   }
 }
 @media screen and (min-width: 77.5em) {
   .container {
-    max-width: 1080px;
+    max-width: 67.5em;
   }
 }
 @media print {
