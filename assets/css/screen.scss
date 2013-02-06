@@ -20,6 +20,9 @@
 // ::Imports pre-render. Must be after reset 
 // ------------------------------------------------------------
 @import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/utilities";
+
 @import "libs/reset";
 @import "libs/settings";
 @import "libs/mixins";
