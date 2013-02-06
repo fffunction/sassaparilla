@@ -56,7 +56,7 @@ $round-to-nearest-half-line			: false;  				// Round the line height to the near
 }
 
 // Make px to ems using base-font-size 
-// echo as: font-size: em-font(13px);
+// echo as: font-size: em-font(#px);
 
 @function em-font($target, $context: $base-font-size) {
    @return emify($target, $context);
@@ -64,7 +64,7 @@ $round-to-nearest-half-line			: false;  				// Round the line height to the near
 
 
 // Make px to ems using base-line-height 
-// echo as: font-size: em-base(13px);
+// echo as: font-size: em-base(#px);
 
 @function em-base($target, $context: $base-line-height) {
    @return emify($target, $context);
