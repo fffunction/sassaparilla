@@ -14,7 +14,7 @@ Sarsaparilla on the other hand, is a nice refreshing root beer. Perhaps crack on
 
 ## Getting Sass(y) with Compass
 
-Sassaparilla uses the power of [Sass](http://sass-lang.com) via SCSS and [Compass](http://compass-style.org) to create flexible stylesheets that we can re-use and add to over time.
+Sassaparilla uses the power of [Sass](http://Sass-lang.com) via SCSS and [Compass](http://compass-style.org) to create flexible stylesheets that we can re-use and add to over time.
 
 Compass is a library of common elements, equations and helper styles that is kept up-to-date by a community of developers and is useful for rapid development and leaner code.
 
@@ -22,7 +22,7 @@ Both Sass and Compass are Ruby Gems and will need to be installed via command li
 
 You can compile using a GUI like Codekit or go hardcore and just use command line. Either way it's pretty easy to get up and running.
 
-You'll find documentation on both the SASS and Compass websites on how to install and use these tools. If you plan on installing Compass (and you'll need to), then you shouldn't need to install SASS separately. 
+You'll find documentation on both the Sass and Compass websites on how to install and use these tools. If you plan on installing Compass (and you'll need to), then you shouldn't need to install Sass separately. 
 
 To install compass on a Mac open Terminal and type:
 
