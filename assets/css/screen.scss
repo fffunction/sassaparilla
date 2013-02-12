@@ -192,7 +192,13 @@ ul 						{ @include unordered-inside }
 }
 
 #grid div.horiz{
-    height: $base-line-height - 1px;
+	// Use this one NOT using a global border-box setting
+	// height: $base-line-height - 1px;
+	
+	// Use this one if you ARE using a global border-box setting
+    height: $base-line-height;
+    
+    // Carry on...
     border-bottom: 1px solid #ddd;
     margin: 0;
     padding: 0;

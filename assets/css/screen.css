@@ -136,9 +136,13 @@ p, pre, label {
 }
 
 ol, ul {
-  font-size: 0.9375em;
-  line-height: 1.6em;
+  font-size: 1em;
+  line-height: 1.5em;
   margin: 0 0 2em 0;
+}
+
+li {
+  line-height: auto;
 }
 
 ul {
@@ -246,7 +250,7 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333;
+  outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -338,8 +342,8 @@ ul {
 }
 
 #grid div.horiz {
-  height: 7px;
-  border-bottom: 1px solid #ddd;
+  height: 8px;
+  border-bottom: 1px solid #dddddd;
   margin: 0;
   padding: 0;
 }

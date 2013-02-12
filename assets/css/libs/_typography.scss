@@ -29,10 +29,13 @@ p, pre, label {
 }
 
 ol, ul {
-	@include adjust-font-size-to(15px);
+	@include adjust-font-size-to(16px);
 	margin: 0 0 rhythm(4, 16px) 0;							// 4 lines below, based on font size
 }
 
+li {
+	line-height: auto;
+}
 
 // Core typography
 // ------------------------------------------------------------
