@@ -32,6 +32,14 @@ line_comments = false
 
 
 
+# SASS core
+# -----------------------------------------------------------------------------
+
+# Chrome needs a precision of 7 to round properly
+Sass::Script::Number.precision = 7
+
+
+
 # Stuff we don't really need below
 # -----------------------------------------------------------------------------
 
