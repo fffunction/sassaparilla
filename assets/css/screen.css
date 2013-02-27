@@ -116,17 +116,39 @@ a:hover, a:focus, a:active {
 }
 
 h1 {
-  font-size: 2em;
-  line-height: 1.25em;
-  margin: 0 0 0.5em 0;
-  font-weight: 500;
+  font-size: 2.25em;
+  line-height: 1.1111111em;
+  margin: 0 0 0.6666667em 0;
 }
 
-h2, h3, h4, h5, h6 {
-  font-size: 1.5625em;
-  line-height: 1.28em;
-  margin: 1.28em 0 0.64em 0;
-  font-weight: 500;
+h2 {
+  font-size: 1.875em;
+  line-height: 1.3333333em;
+  margin: 1.0666667em 0 0.5333333em 0;
+}
+
+h3 {
+  font-size: 1.375em;
+  line-height: 1.4545455em;
+  margin: 1.4545455em 0 0.7272727em 0;
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 0 0 0.4em 0;
+}
+
+h5 {
+  font-size: 1.125em;
+  line-height: 1.3333333em;
+  margin: 0 0 0.4444444em 0;
+}
+
+h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 0.5em 0;
 }
 
 p, pre, label {

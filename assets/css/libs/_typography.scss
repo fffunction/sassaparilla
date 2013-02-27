@@ -13,7 +13,7 @@
 
 h1 { 
 	@include adjust-font-size-to(36px); 
-	margin: 0 0 rhythm(3, 36px) 0;  						// 2 lines below, based on font size
+	margin: 0 0 rhythm(3, 36px) 0;  						// 3 lines below, based on font size
 } 
 			
 h2 { 
@@ -28,17 +28,17 @@ h3 {
 
 h4 { 
 	@include adjust-font-size-to(20px); 
-	margin: 0 0 rhythm(1, 20px) 0;  						// 3 lines below, based on font size 
+	margin: 0 0 rhythm(1, 20px) 0;  						// 1 lines below, based on font size 
 } 
 
 h5 { 
 	@include adjust-font-size-to(18px); 
-	margin: 0 0 rhythm(1, 18px) 0;  						// 3 lines below, based on font size 
+	margin: 0 0 rhythm(1, 18px) 0;  						// 1 lines below, based on font size 
 } 
 
 h6 { 
 	@include adjust-font-size-to(16px); 
-	margin: 0 0 rhythm(1, 16px) 0;  						// 3 lines below, based on font size 
+	margin: 0 0 rhythm(1, 16px) 0;  						// 1 lines below, based on font size 
 } 	
 
 p, pre, label { 
