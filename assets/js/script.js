@@ -32,6 +32,18 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
 	/***********************************************/
 	
 	var instanceVariable = 'An instance variable, available to all methods of this closure.';	
+	
+	
+	/***********************************************/
+	//	INIT
+	//	This function will be called upon load, so call
+	//	any initialastion functions here. 
+	/***********************************************/
+	
+	this.init = function()
+	{	
+		getData();	
+	}();
 
 
 	/***********************************************/
@@ -39,7 +51,7 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
 	/***********************************************/	
 	
 	// get some data
-	this.getData = function()
+	function getData()
 	{
 		// define a local variable
 		var localVariable = 'A local variable, scoped to this method.';
@@ -54,30 +66,16 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
 	}
 	
 	// on data return
-	this.onData = function(data)
+	function onData(data)
 	{  		
 		// log out some data
 		console.log(data);
 		
 		// get the body with jQuery, do something with it.
 		$('body').each(function (){
-			console.log(this);
+			log(this);
 		})
 	}
-	
-	
-	/***********************************************/
-	//	INIT
-	//	This function will be called upon load, so call
-	//	any initialastion functions here. 
-	//	THIS FUNCTION MUST COME AT THE BOTTOM 
-	// 	OF THIS SCRIPT BODY
-	/***********************************************/
-	
-	this.init = function()
-	{	
-		getData();	
-	}();
 	
 		
 })(jQuery);
