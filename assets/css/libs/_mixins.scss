@@ -68,6 +68,17 @@
   }
 }
 
+// Transitions
+// -------------------------------------------------------
+
+// Set-up custom transitions
+
+@mixin color_transition {
+	@include transition-property(color); 
+	@include transition-duration(0.3s); 
+	@include transition-timing-function(ease-in-out);
+}
+
 // HEX to RGB
 // http://codepen.io/sturobson/pen/hdKyv
 // -------------------------------------------------------
