@@ -69,6 +69,10 @@ This file contains the core typesetting for the site. It relies on variables set
 
 Contains default form elements and standard styling. If you're not using forms you can safely leave this out.
 
+### Icons.scss
+
+Easy spriting, with retina support built in. Simply include _icons.scss, and then put your normal and double size pngs into `/assets/img/ico` and `/assets/img/ico2x` folders. Compass will create image sprites for you, then add any element with `ico` and `ico-[image-name]` classes for spriting loveliness.
+
 --- 
 
 ## Compass rhythm and leading
