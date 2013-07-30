@@ -10,14 +10,14 @@
 // ::Clearfix extends
 // ::Base styles
 
-// ::Layout styles 
-// ::Media queries 
+// ::Layout styles
+// ::Media queries
 // ::State styles
-// ::Debugs  
+// ::Debugs
 
 
 
-// ::Imports pre-render. Must be after reset 
+// ::Imports pre-render. Must be after reset
 // ------------------------------------------------------------
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
@@ -57,7 +57,7 @@ html {
 	font-size: 100%;
 }
 
-body { 
+body {
 	color: $base-color;
 	font-family: Helvetica, Arial, sans-serif;
 }
@@ -71,11 +71,11 @@ a {
 }
 
 // Import base typography into the cascade (if required)
-@import "libs/typography"; 		
+@import "libs/typography";
 
 
 // Import form styles into the cascade (if required)
-@import "libs/forms";			
+@import "libs/forms";
 
 
 
@@ -153,9 +153,11 @@ ul 						{ @include unordered-inside }
 }
 
 
-// IOS specifics 
+// IOS specifics
 @media screen and (max-width: 769px) {  // Absolute measure here, as we're talking about devices, not screen size
-	-webkit-text-size-adjust:none; 		// Stop iPhone/iPad from scaling text
+	body {
+		-webkit-text-size-adjust:none; 			// Stop iPhone/iPad from scaling text
+	}
 }
 
 
@@ -194,10 +196,10 @@ ul 						{ @include unordered-inside }
 #grid div.horiz{
 	// Use this one NOT using a global border-box setting
 	// height: $base-line-height - 1px;
-	
+
 	// Use this one if you ARE using a global border-box setting
     height: $base-line-height;
-    
+
     // Carry on...
     border-bottom: 1px solid #ddd;
     margin: 0;
