@@ -1,0 +1,57 @@
+/*  icons.scss  
+--------------------------------------------- */
+
+/* Icons
+*/
+$ico-layout: vertical;
+$ico2x-layout: vertical;
+$ico-spacing: 10px;
+$ico2x-spacing: 10px;
+
+.ico { /* @TODO check icon implementation as the
+          @include inline-block fails when the icon
+          appears before "Previous" in the pagination in ie7 */
+  @include inline-block;
+  /* Use 100% here instead of -9999px for performance (http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/) */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin retina-sprite($folder) {
+  $sprites: sprite-map("#{$folder}/*.png", $spacing: 10px); // Generates a sprite containing every icon in the supplied folder.
+  $sprites-2x: sprite-map("#{$folder}2x/*.png", $spacing: 10px); // Generates a second sprite containing every icon @2x resolution.
+   
+  background-image: sprite-url($sprites);
+  background-repeat: no-repeat;
+  @include inline-block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  $max-width: 0;
+  @each $sprite in sprite-names($sprites) {
+    &.ico-#{$sprite} {
+      $width: image-width(sprite-file($sprites, $sprite));
+      background-position: sprite-position($sprites, $sprite);
+      height: image-height(sprite-file($sprites, $sprite));
+      width: $width;
+      @if $width > $max-width { $max-width: $width };
+    }
+  } 
+  @media (min-device-pixel-ratio: 1.5), 
+    (-o-min-device-pixel-ratio: 2/1), (-webkit-min-device-pixel-ratio: 1.5) {
+    background-image: sprite-url($sprites-2x);
+    @include background-size($max-width auto);
+    @each $sprite in sprite-names($sprites-2x) {
+      &.ico-#{$sprite} { 
+        background-position: nth(sprite-position($sprites-2x, $sprite), 1) nth(sprite-position($sprites-2x, $sprite), 2)/2;   
+      }
+    }
+  }
+}
+
+.ico {
+  @include retina-sprite(ico);
+}
+
+
