@@ -1,0 +1,57 @@
+@import "libs/settings";
+@import "libs/mixins";
+@import "libs/placeholders";
+
+// ------------------------------------------------------------
+// Typset size modules
+// ------------------------------------------------------------
+
+.as-heading__headline 			{ @include adjust-font-size-to($alpha); } 
+.as-heading__largest 			{ @include adjust-font-size-to($beta); } 	
+.as-heading__large 				{ @include adjust-font-size-to($gamma); } 	
+.as-heading__medium				{ @include adjust-font-size-to($delta); } 	
+.as-heading__normal 			{ @include adjust-font-size-to($epsilon); } 	
+.as-heading__small 				{ @include adjust-font-size-to($zeta); } 	
+.as-heading__smallest			{ @include adjust-font-size-to($eta); } 	
+.as-blockquote 					{ @include adjust-font-size-to($quote); line-height: normal; p { margin: 0; font-style: italic; } }
+.as-para 						{ @include adjust-font-size-to($para); }
+
+// ------------------------------------------------------------
+// Typesetting & rhythm matching
+// ------------------------------------------------------------
+
+// Set rhythm for headers
+.as-heading__headline--typeset 			{ margin: 0 0 rhythm(3, $alpha) 0;	} 
+.as-heading__largest--typeset 			{ margin: 0 0 rhythm(3, $beta) 0;	} 	
+.as-heading__large--typeset				{ margin: 0 0 rhythm(3, $gamma) 0; } 	
+.as-heading__medium--typeset			{ margin: 0 0 rhythm(3, $delta) 0; } 	
+.as-heading__normal--typeset 			{ margin: 0 0 rhythm(3, $epsilon) 0; }  	
+.as-heading__small--typeset 			{ margin: 0 0 rhythm(3, $zeta) 0; } 	
+.as-heading__smallest--typeset			{ margin: 0 0 rhythm(3, $eta) 0; }  
+	
+	
+// Set rhythm for paragraphs and lists
+.as-para--typeset 						{ margin: 0 0 rhythm(2, $para) 0; }
+.as-list--typeset 						{ margin: 0 0 rhythm(2, $para) 0; }
+
+.as-unordered-list--typeset 			{ @extend .as-list--typeset; margin-left: 1em; @include unordered; }
+.as-ordered-list--typeset 				{ @extend .as-unordered-list--typeset; @include ordered; }
+.as-blockquote--typeset 				{ @extend .as-blockquote; margin: rhythm(6, $quote) 0; }
+
+
+// Use on parent element to style elements within. E.g an article page
+.is-typeset {
+	.headline	{ @extend .as-heading__headline; 	@extend .as-heading__headline--typeset; } 
+	h1			{ @extend .as-heading__largest; 	@extend .as-heading__largest--typeset; } 	
+	h2 			{ @extend .as-heading__large; 		@extend .as-heading__large--typeset; } 	
+	h3			{ @extend .as-heading__medium; 		@extend .as-heading__medium--typeset; } 	
+	h4 			{ @extend .as-heading__normal; 		@extend .as-heading__normal--typeset; }  	
+	h5			{ @extend .as-heading__small; 		@extend .as-heading__small--typeset; } 	
+	h6			{ @extend .as-heading__smallest; 	@extend .as-heading__smallest--typeset; }  	
+	p 			{ @extend .as-para--typeset; }
+	ol			{ @extend .as-ordered-list--typeset; }
+	ul 			{ @extend .as-unordered-list--typeset; }
+	li 			{ @extend .as-list--typeset; }
+	blockquote 	{ @extend .as-blockquote--typeset; }
+}
+

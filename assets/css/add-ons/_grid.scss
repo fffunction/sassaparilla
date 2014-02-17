@@ -1,0 +1,63 @@
+@import "libs/settings";
+@import "libs/mixins";
+@import "libs/placeholders";
+
+@include grid;	// Include the grid mixin
+
+// ------------------------------------------------------------
+
+
+// Standard row
+// Rows should contain columns as children
+// You can use multiple grid denominations within each breakpoint, but each breakpoint must have unique column set-up
+// For example, you can have a 6 and 8 column grid at breakpoint b, but you can't use 6 or eight columns in other breakpoints
+.row {
+	@extend %pie-clearfix;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $internal-spacing/2; 	// Narrower for smaller screens
+	padding-right: $internal-spacing/2;	// Narrower for smaller screens
+	@include respond-to($b-vp, $IE9: false) { 
+		min-width: $b-vp;
+		@include grid_columns(2); 	// Two column grid
+	}
+	@include respond-to($c-vp, $IE9: false) { 
+		padding-left: $internal-spacing;
+		padding-right: $internal-spacing;
+		min-width: $c-vp;
+		@include grid_columns(6);	// Six column grid
+	}
+	@include respond-to($d-vp, $IE9: false) { 
+		min-width: $d-vp;
+		@include grid_columns(8);	// Eight column grid
+	}
+	@include respond-to($e-vp, $IE9: false) { 
+		min-width: $e-vp;
+		@include grid_columns(12);	// Twelve column grid
+	}
+	@include respond-to($max-vp, $IE9: false) { 
+		width: $f-vp;
+	}
+	// IE less than 9 
+	.lt-ie9 & {
+		@include grid_columns(12);	// Twelve column grid
+		width: $ie-fixed-vp;
+	}
+}
+
+// Drag row left to allow for equal spaced grid. AKA gutters
+// Gutters set in mixins.scss file
+.row__colspaced {
+	position: relative;
+	@extend %pie-clearfix;
+	@include respond-to($start-columns) {			
+		min-width: (100% + $internal-spacing-percent); 	
+		left: -$internal-spacing-percent; 	
+	}
+	.lt-ie9 & { 
+		max-width: 100%; 
+		min-width: auto; 
+		left: auto; 
+	}
+}

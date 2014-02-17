@@ -1,0 +1,216 @@
+// ------------------------------------------------------------
+// Mixins
+// ------------------------------------------------------------
+
+
+// -------------------------------------------------------
+// List styles
+// -------------------------------------------------------
+
+// Mixins for list style types
+@mixin unordered {
+	 list-style-position: outside; 
+	 list-style-type: disc;
+}
+
+@mixin unordered-inside {
+	 list-style-position: inside; 
+	 list-style-type: disc;
+}
+
+@mixin ordered {
+	list-style-position: outside; 
+	list-style-type: decimal;
+}
+
+@mixin ordered-inside {
+	list-style-position: inside; 
+	list-style-type: decimal;
+}
+
+@mixin nobullet {
+	list-style-type: none;
+}
+
+// -------------------------------------------------------
+// Transitions
+// -------------------------------------------------------
+
+@mixin _transition($prop:all, $duration:0.2s, $timing:ease-in-out, $delay:0s) {
+	@include transition($prop $duration $timing $delay);
+}
+
+
+
+// -------------------------------------------------------
+// Link hover styles
+// -------------------------------------------------------
+
+@mixin link-active-styles {
+	&:hover, &:focus, &:active {
+		@content; 
+	}
+}
+	
+	
+// -------------------------------------------------------
+// Align things vertically (http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/)
+// -------------------------------------------------------
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+// -------------------------------------------------------
+// Media queries
+// -------------------------------------------------------
+
+
+// Reference widths from settings file
+@mixin respond-to($media-min, $IE9: true) {
+    @if $IE9 == true {
+        .lt-ie9 & {
+            @content;
+        }
+        @media screen and (min-width: $media-min)  {
+            @content;
+        }
+    }
+    @else {
+        @media screen and (min-width: $media-min) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-to-max($media-max, $IE9: true) {
+    @if $IE9 == true {
+        .lt-ie9 & {
+            @content;
+        }
+        @media screen and (max-width: $media-max - 1px)  {
+            @content;
+        }
+    }
+    @else {
+        @media screen and (max-width: $media-max - 1px) {
+            @content;
+        }
+    }
+}
+
+
+@mixin respond-to-min-max($media-min, $media-max, $IE9: true) {
+    @if $IE9 == true {
+        .lt-ie9 & {
+            @content;
+        }
+        @media screen and (min-width: $media-min) and (max-width: $media-max)  {
+            @content;
+        }
+    }
+    @else {
+         @media screen and (min-width: $media-min) and (max-width: $media-max) {
+            @content;
+        }
+    }
+}
+
+
+// -------------------------------------------------------
+// Retina images
+// -------------------------------------------------------
+
+// Usage: Send path, image name, and width and height. 
+// Name retina images [name]2x.
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+// -------------------------------------------------------
+// HEX to RGB
+// -------------------------------------------------------
+
+// http://codepen.io/sturobson/pen/hdKyv
+@mixin rgba($color, $value) {
+	background-color: $color;
+	background-color: rgba($color, $value);
+}
+
+
+// -------------------------------------------------------
+// Grid
+// -------------------------------------------------------
+
+// Generate columns names span-#
+// Called by: @include grid_columns(#) where # is the amount of columns needed
+// Perfect for use in breakpoints to use different columns
+
+@mixin grid_columns($columns){
+	@for $i from 1 through $columns{
+		.colspan#{$columns}-#{$i}{
+			width: ((100% / $columns)*$i);		
+		}
+	}
+	@for $i from 1 through $columns{
+		.push#{$columns}-#{$i}{
+			margin-left: ((100% / $columns)*$i);		
+		}
+	}
+	@for $i from 1 through $columns{
+		.pull#{$columns}-#{$i}{
+			margin-right: ((100% / $columns)*$i);		
+		}
+	}
+	.push-disable#{$columns}{
+		margin-left: 0;		
+	}
+	.pull-disable#{$columns}{
+		margin-right: 0;		
+	}
+	.hide-at#{$columns} {
+		display: none;
+	}
+	.block-show-at#{$columns} {
+		display: block;
+	}
+	.inline-show-at#{$columns} {
+		display: inline;
+		display: inline-block;
+	}
+	
+}
+
+@mixin grid {	
+	// Widths
+	*[class*="colspan"] {
+		width: 100%; 
+		display: block;
+	}
+	// Floats
+	*[class*="as-grid"] {
+		float: left;
+		display: inline;
+		display: inline-block;
+	}
+	// Gutters
+	*[class*="with-gutter"] {
+		@include respond-to($start-columns) {
+			padding-left: $internal-spacing-percent; 
+		}
+	}
+}
