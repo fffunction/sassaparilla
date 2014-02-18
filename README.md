@@ -97,6 +97,10 @@ We've included a modules folder with an example `_navigation.scss` module. We li
 
 We also use Sass globbing to pull all the files in from this folder with a `*` wildcard - if globbing is giving you issues, then you can add each module in maually in the base css file.
 
+To install sass-globbing:
+
+    $ gem install sass-globbing
+
 --- 
 
 ## Working with breakpoints
